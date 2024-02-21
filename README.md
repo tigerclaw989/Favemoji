@@ -1,2 +1,2 @@
 # Favemoji
-iOS jailbreak tweak that replaces the "Frequently Used" emojis with custom favourites. Also allows you to change the amount of recent emojis.
+[Favemoji](https://github.com/iCrazeiOS/Favemoji) but it works on iOS 14 and spells favorite correctly
