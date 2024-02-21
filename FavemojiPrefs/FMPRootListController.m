@@ -3,9 +3,6 @@
 @implementation FMPRootListController
 -(NSString *)plistPathForFilename:(NSString *)filename {
 	NSString *path = [NSString stringWithFormat:@"/var/mobile/Library/Preferences/%@.plist", filename];
-	if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/jb/var/mobile/Library/Preferences/"]) {
-		path = [@"/var/jb" stringByAppendingString:path];
-	}
 	return path;
 }
 

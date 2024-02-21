@@ -69,12 +69,12 @@ NSString *emojis = @"";
 // Rename the "Frequently Used" category
 %hook UIKeyboardEmojiCategory
 +(NSString *)displayName:(long long)arg1 {
-	return (enabled && arg1 == 0) ? @"Favourites" : %orig;
+	return (enabled && arg1 == 0) ? @"Favorites" : %orig;
 }
 %end
 
 
-// Change amount of recent emojis (also includes favourites)
+// Change amount of recent emojis (also includes favorites)
 %hook UIKeyboardEmojiGraphicsTraits
 -(int)prepolulatedRecentCount {
 	return customAmount;
@@ -84,9 +84,7 @@ NSString *emojis = @"";
 
 static void loadPrefs() {
 	NSString *path = @"/var/mobile/Library/Preferences/com.icraze.favemoji.plist";
-	if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/jb/var/mobile/Library/Preferences/"]) {
-		path = [@"/var/jb" stringByAppendingString:path];
-	}
+
 	prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
 
 	enabled = prefs[@"enabled"] ? [prefs[@"enabled"] boolValue] : YES;

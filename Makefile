@@ -1,7 +1,8 @@
-export PREFIX = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
-export SDKVERSION = 14.4
-export ARCHS = arm64 arm64e
-
+#export PREFIX = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
+#export SDKVERSION = 14.4
+#export ARCHS = arm64 arm64e
+TARGET := iphone:clang:latest:14.0
+ARCHES = arm64 arm64e
 INSTALL_TARGET_PROCESSES = SpringBoard
 
 include $(THEOS)/makefiles/common.mk
